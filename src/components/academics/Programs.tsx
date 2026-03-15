@@ -1,120 +1,68 @@
-
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ChevronRight, BookOpen, GraduationCap, Star, Microscope } from 'lucide-react';
+import { BookOpenCheck, GraduationCap, Microscope, Trophy } from 'lucide-react';
 
 const programs = [
   {
-    title: "Primary Education",
-    grades: "Grades 1-5",
-    description: "A strong foundation in literacy, numeracy, and essential skills, fostering curiosity and a love for learning.",
-    icon: BookOpen,
-    color: "bg-gradient-to-tr from-amber-300/60 to-amber-500/60",
-    accentColor: "bg-amber-400",
+    title: 'Primary Education',
+    grades: 'Grades 1-5',
+    desc: 'Strong basics in literacy, numeracy, and communication with care-driven mentoring.',
+    icon: BookOpenCheck,
   },
   {
-    title: "Middle School",
-    grades: "Grades 6-8",
-    description: "An engaging curriculum that builds on fundamentals while introducing more complex subjects and concepts.",
+    title: 'Middle School',
+    grades: 'Grades 6-8',
+    desc: 'Transition stage focused on concept depth, confidence, and subject exploration.',
     icon: GraduationCap,
-    color: "bg-gradient-to-tr from-sky-300/60 to-sky-500/60",
-    accentColor: "bg-sky-400",
   },
   {
-    title: "High School",
-    grades: "Grades 9-10",
-    description: "Comprehensive preparation for board examinations with specialized instruction and academic counseling.",
-    icon: Star,
-    color: "bg-gradient-to-tr from-purple-300/60 to-purple-500/60",
-    accentColor: "bg-purple-400",
+    title: 'High School',
+    grades: 'Grades 9-10',
+    desc: 'Board-focused preparation with regular assessments and targeted support.',
+    icon: Trophy,
   },
   {
-    title: "Senior Secondary",
-    grades: "Grades 11-12",
-    description: "Focused streams in Science, Commerce, and Humanities to prepare students for higher education and careers.",
+    title: 'Senior Secondary',
+    grades: 'Grades 11-12',
+    desc: 'Stream-based progression in Science, Commerce, and Humanities with career direction.',
     icon: Microscope,
-    color: "bg-gradient-to-tr from-emerald-300/60 to-emerald-500/60",
-    accentColor: "bg-emerald-400",
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
 const Programs = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <motion.div 
-          className="max-w-3xl mx-auto text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          className="max-w-3xl mx-auto text-center mb-14"
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="inline-block p-2 px-4 bg-school-blue/10 rounded-full text-school-blue font-medium mb-4">
-            Our Academic Programs
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Education Journey
-          </h2>
-          <p className="text-lg text-gray-600">
-            From foundational learning to college preparation, our academic programs 
-            are designed to support every stage of your child's educational journey.
-          </p>
+          <span className="scene-label mb-4">Academic Stages</span>
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900">One Academic Journey, Four Strong Stages</h2>
         </motion.div>
-        
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {programs.map((program) => (
-            <motion.div 
-              key={program.title} 
-              variants={itemVariants}
-              className="group"
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {programs.map((p, idx) => (
+            <motion.article
+              key={p.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: idx * 0.06 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="interactive-card rounded-3xl border border-red-200 bg-white p-6 shadow-md"
             >
-              <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-500 border-0 shadow-lg">
-                <div className={`h-24 ${program.color} relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20 bg-[url('/lovable-uploads/db8487fa-d890-4244-9872-a9bbabd534d8.png')] bg-cover bg-center"></div>
-                  <div className={`absolute -bottom-6 left-6 w-12 h-12 ${program.accentColor} rounded-lg shadow-lg flex items-center justify-center transform transition-all duration-500 group-hover:scale-110`}>
-                    <program.icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <CardContent className="pt-10">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-school-blue transition-colors duration-300">{program.title}</h3>
-                  <p className="text-sm text-school-blue font-medium mb-3">{program.grades}</p>
-                  <p className="text-gray-600">{program.description}</p>
-                  <div className="mt-5 flex justify-end">
-                    <Button variant="ghost" size="sm" className="text-school-blue hover:text-school-blue-dark hover:bg-school-blue/5 p-0 h-auto">
-                      Learn more <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+              <div className="flex justify-end mb-5">
+                <p.icon className="text-school-blue" size={24} />
+              </div>
+              <h3 className="text-2xl font-black text-gray-900">{p.title}</h3>
+              <p className="text-base text-school-blue mt-1 font-bold">{p.grades}</p>
+              <p className="text-base text-gray-600 mt-3 leading-relaxed font-medium">{p.desc}</p>
+            </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

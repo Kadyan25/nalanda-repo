@@ -110,7 +110,7 @@ const Enquire = () => {
       );
       
       // Create the mailto link with the school email
-      const schoolEmail = 'indofoundationschool@gmail.com';
+      const schoolEmail = 'info@nalandapublicschool.in';
       const mailtoLink = `mailto:${schoolEmail}?subject=${subject}&body=${body}`;
       
       // Open the default email client with the prepopulated email
@@ -151,28 +151,28 @@ const Enquire = () => {
     "@type": "ContactPage",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.indofoundationschool.com/enquire"
+      "@id": "https://www.nalandapublicschool.in/enquire"
     },
-    "headline": "Contact Indo Foundation School",
-    "description": "Contact Indo Foundation School for admissions information, campus visits, or general inquiries.",
+    "headline": "Contact Nalanda Public School",
+    "description": "Contact Nalanda Public School for admissions information, campus visits, or general inquiries.",
     "publisher": {
       "@type": "Organization",
-      "name": "Indo Foundation School",
+      "name": "Nalanda Public School",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.indofoundationschool.com/lovable-uploads/5704d268-92a8-4704-9601-2f9cab7af2f5.jpg"
+        "url": "https://www.nalandapublicschool.in/lovable-uploads/1.jpeg"
       }
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9896110054",
+      "telephone": "+91-8950899495",
       "contactType": "customer service",
       "areaServed": "IN",
       "availableLanguage": ["English", "Hindi"]
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Plot No 42/8, Shivaji Colony",
+      "streetAddress": "Shivaji Colony, Under the Flyover",
       "addressLocality": "Rohtak",
       "addressRegion": "Haryana",
       "postalCode": "124001",
@@ -180,42 +180,41 @@ const Enquire = () => {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "28.883885709030803",
-      "longitude": "76.59034881178829"
+      "latitude": "28.885394908384015",
+      "longitude": "76.59130500327484"
     }
   };
 
   // School contact information
-  const schoolCoordinates = "28.883885709030803,76.59034881178829";
-  const schoolName = encodeURIComponent("Indo Foundation School, Shivaji Colony");
+  const schoolCoordinates = "28.885394908384015,76.59130500327484";
+  const schoolName = encodeURIComponent("Nalanda Public School, Shivaji Colony, Under the Flyover");
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${schoolCoordinates}`;
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      details: 'indofoundationschool@gmail.com',
-      link: 'mailto:indofoundationschool@gmail.com',
+      details: 'info@nalandapublicschool.in',
+      link: 'mailto:info@nalandapublicschool.in',
     },
     {
       icon: Phone,
       title: 'Phone',
       details: (
         <>
-          +91 9896110054<br />
-          +91 9896205966<br />
-          01262237556
+          +91 8950899495<br />
+          +91 8950899695
         </>
       ),
-      link: 'tel:+919896110054',
+      link: 'tel:+918950899495',
     },
     {
       icon: MapPin,
       title: 'Address',
       details: (
         <>
-          Plot No 42/8, Shivaji Colony Rohtak, Haryana 124001
-          <div className="text-xs mt-1 text-school-blue">28.883885709030803, 76.59034881178829</div>
+          Shivaji Colony, Under the Flyover, Rohtak, Haryana
+          <div className="text-xs mt-1 text-school-blue">28.885394908384015, 76.59130500327484</div>
         </>
       ),
       link: `https://www.google.com/maps?q=${schoolCoordinates}&z=18`,
@@ -225,24 +224,24 @@ const Enquire = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Contact & Admissions Enquiry | Indo Foundation School Rohtak</title>
-        <meta name="description" content="Contact Indo Foundation School Rohtak for admissions information, campus visits, or general inquiries. Fill our enquiry form or reach us by phone, email, or visit our campus in Shivaji Colony." />
-        <meta name="keywords" content="Indo Foundation School contact, school admission Rohtak, school enquiry form, visit school campus, school enrollment Rohtak, admission process, contact details, school timings, Shivaji Colony school" />
-        <link rel="canonical" href="https://www.indofoundationschool.com/enquire" />
+        <title>Contact & Admissions Enquiry | Nalanda Public School Rohtak</title>
+        <meta name="description" content="Contact Nalanda Public School Rohtak for admissions information, campus visits, or general inquiries. Fill our enquiry form or reach us by phone, email, or visit our campus at Shivaji Colony, Under the Flyover." />
+        <meta name="keywords" content="Nalanda Public School contact, school admission Rohtak, school enquiry form, visit school campus, school enrollment Rohtak, school timings, Shivaji Colony Under the Flyover" />
+        <link rel="canonical" href="https://www.nalandapublicschool.in/enquire" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.indofoundationschool.com/enquire" />
-        <meta property="og:title" content="Contact & Admissions Enquiry | Indo Foundation School Rohtak" />
-        <meta property="og:description" content="Contact Indo Foundation School for admissions information, campus visits, or general inquiries about our educational programs. Visit us in Shivaji Colony, Rohtak." />
-        <meta property="og:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta property="og:url" content="https://www.nalandapublicschool.in/enquire" />
+        <meta property="og:title" content="Contact & Admissions Enquiry | Nalanda Public School Rohtak" />
+        <meta property="og:description" content="Contact Nalanda Public School for admissions information, campus visits, or general inquiries about our educational programs. Visit us at Shivaji Colony, Under the Flyover, Rohtak." />
+        <meta property="og:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.indofoundationschool.com/enquire" />
-        <meta name="twitter:title" content="Contact & Admissions Enquiry | Indo Foundation School" />
+        <meta name="twitter:url" content="https://www.nalandapublicschool.in/enquire" />
+        <meta name="twitter:title" content="Contact & Admissions Enquiry | Nalanda Public School" />
         <meta name="twitter:description" content="Contact us for admissions information, campus visits, or general inquiries about our educational programs." />
-        <meta name="twitter:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta name="twitter:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Structured data */}
         <script type="application/ld+json">
@@ -250,10 +249,10 @@ const Enquire = () => {
         </script>
       </Helmet>
       
-      <section className="relative pt-20 pb-16 bg-gradient-to-b from-school-blue/5 to-white">
+      <section className="relative pt-24 pb-14 bg-gradient-to-b from-yellow-50/70 to-white">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-school-blue/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 -left-40 w-96 h-96 bg-school-blue/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-school-blue/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 -left-40 w-96 h-96 bg-school-blue-light/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-6 py-16 relative z-10">
@@ -263,7 +262,8 @@ const Enquire = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
+            <span className="scene-label mb-4">Admissions Desk</span>
+            <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Contact Us</h1>
             <p className="text-lg text-gray-600">Have questions or want to learn more about our school? Fill out the form below to get in touch with our administrative team.</p>
           </motion.div>
         </div>
@@ -292,7 +292,7 @@ const Enquire = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
                   >
-                    <Card className="glass-card overflow-hidden">
+                    <Card className="overflow-hidden border border-red-200 bg-white shadow-sm">
                       <a 
                         href={item.link} 
                         target={item.icon === MapPin ? "_blank" : undefined} 
@@ -340,7 +340,7 @@ const Enquire = () => {
             </div>
             
             <motion.div 
-              className="md:col-span-2 glass-card p-8"
+              className="md:col-span-2 rounded-3xl border border-red-200 bg-white p-8 shadow-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -502,3 +502,5 @@ const Enquire = () => {
 };
 
 export default Enquire;
+
+

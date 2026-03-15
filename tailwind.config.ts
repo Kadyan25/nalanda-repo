@@ -64,9 +64,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				school: {
-					blue: '#0EA5E9',
-					'blue-light': '#38BDF8',
-					'blue-dark': '#0369A1',
+					blue: '#B91C1C',
+					'blue-light': '#F59E0B',
+					'blue-dark': '#7F1D1D',
 				}
 			},
 			borderRadius: {

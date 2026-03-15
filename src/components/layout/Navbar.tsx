@@ -4,11 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import the refactored components
 import Logo from './navbar/Logo';
 import DesktopNavLinks from './navbar/DesktopNavLinks';
 import MobileMenu from './navbar/MobileMenu';
-import SocialLinks from './navbar/SocialLinks';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,29 +32,26 @@ const Navbar = () => {
 
   return (
     <AnimatePresence>
-      <motion.nav 
+      <motion.nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 py-3 px-4 md:px-10 transition-all duration-500 w-full",
-          scrolled 
-            ? "bg-gradient-to-r from-white/95 via-blue-50/95 to-white/95 backdrop-blur-lg shadow-md" 
+          "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500",
+          scrolled
+            ? "bg-white/85 backdrop-blur-xl border-b border-red-200/70 shadow-lg shadow-red-900/5"
             : "bg-transparent"
         )}
-        initial={{ y: -100 }}
+        initial={{ y: -90 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo Component */}
+        <div className="w-full bg-gradient-to-r from-school-blue-dark via-school-blue to-school-blue-light text-white text-xs md:text-sm tracking-[0.16em] uppercase py-1.5 text-center">
+          Admissions Open 2026-27 | Nursery to 12th (All Stream)
+        </div>
+        <div className="max-w-7xl mx-auto px-4 md:px-10 py-4 flex justify-between items-center gap-4">
           <Logo />
-
-          {/* Desktop Navigation Links & Social Links */}
           <div className="hidden md:flex items-center">
             <DesktopNavLinks />
-            <SocialLinks />
           </div>
-
-          {/* Mobile Menu */}
-          <MobileMenu 
+          <MobileMenu
             isOpen={isOpen}
             toggleMenu={toggleMenu}
             closeMenu={closeMenu}
@@ -68,3 +63,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

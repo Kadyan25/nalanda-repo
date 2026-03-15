@@ -24,30 +24,30 @@ const getIconForPath = (path: string) => {
 
 const DesktopNavLinks = () => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="hidden md:flex items-center space-x-2"
+      transition={{ duration: 0.45, delay: 0.1 }}
+      className="hidden md:flex items-center"
     >
-      <div className="flex space-x-1">
+      <div className="flex items-center gap-1 rounded-2xl border border-red-200/80 bg-white/80 px-2 py-1 shadow-sm">
         {navLinks.map((link, index) => {
           const IconComponent = getIconForPath(link.path);
-          
+
           return (
             <motion.div
               key={link.path}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index, duration: 0.4 }}
+              transition={{ delay: 0.06 * index, duration: 0.3 }}
             >
-              <NavLink 
+              <NavLink
                 to={link.path}
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   cn(
-                    "relative px-4 py-2 rounded-full text-gray-700 hover:text-school-blue transition-all duration-300 ease-in-out overflow-hidden flex items-center",
-                    isActive ? "text-school-blue font-medium bg-blue-50/80" : "",
-                    link.highlight ? "bg-gradient-to-r from-school-blue to-school-blue-dark text-white hover:text-white shadow-sm hover:shadow-md" : "",
+                    "relative px-4 py-2.5 rounded-xl text-base font-semibold transition-all duration-300 ease-out overflow-hidden flex items-center gap-1.5",
+                    isActive ? "bg-gradient-to-r from-yellow-100 to-red-100 text-school-blue-dark shadow-sm" : "text-gray-700 hover:text-school-blue hover:bg-red-50/70",
+                    link.highlight ? "bg-gradient-to-r from-school-blue to-school-blue-dark text-white hover:text-white shadow-sm" : "",
                     link.isBold && "font-bold",
                     link.className
                   )
@@ -55,13 +55,20 @@ const DesktopNavLinks = () => {
               >
                 {({ isActive }) => (
                   <span className="relative z-10 flex items-center gap-1.5">
-                    {IconComponent && <IconComponent size={16} className={cn("inline", isActive && !link.highlight ? "text-school-blue" : link.highlight ? "text-white" : "text-gray-500")} />}
+                    {IconComponent && (
+                      <IconComponent
+                        size={15}
+                        className={cn(
+                          isActive && !link.highlight ? "text-school-blue-dark" : link.highlight ? "text-white" : "text-gray-500"
+                        )}
+                      />
+                    )}
                     {link.name}
                     {isActive && !link.highlight && (
-                      <motion.div 
-                        className="absolute bottom-0 left-0 h-0.5 bg-school-blue w-full"
+                      <motion.div
+                        className="absolute left-2 right-2 -bottom-[2px] h-0.5 bg-school-blue-dark"
                         layoutId="underline"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                       />
                     )}
                   </span>
@@ -76,3 +83,4 @@ const DesktopNavLinks = () => {
 };
 
 export default DesktopNavLinks;
+

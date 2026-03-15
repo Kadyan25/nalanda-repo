@@ -6,7 +6,6 @@ import UploadSection from '@/components/gallery/UploadSection';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
-import { supabase } from '@/integrations/supabase/client';
 import { Image } from 'lucide-react';
 
 export type GalleryImage = {
@@ -24,52 +23,52 @@ const Gallery = () => {
   const initialImages: GalleryImage[] = [
     {
       id: '1',
-      src: '/lovable-uploads/caefd431-3e9a-4b95-9c75-0c029111b4c7.png',
-      alt: 'Academic Achievement Awards',
+      src: 'https://source.unsplash.com/1200x800/?students,classroom&sig=101',
+      alt: 'Classroom Learning Session',
       category: 'academics',
-      description: 'Students proudly displaying their academic achievement certificates with their teacher.'
+      description: 'Students engaged in a focused classroom learning session.'
     },
     {
       id: '2',
-      src: '/lovable-uploads/73bb71c5-ccf7-4f48-af95-da62530b6bc1.png',
+      src: 'https://source.unsplash.com/1200x800/?school,sports&sig=102',
       alt: 'Sports Day Winners',
       category: 'sports',
       description: 'Winners of the annual sports competition with their trophies and medals.'
     },
     {
       id: '3',
-      src: '/lovable-uploads/764e3d8d-e8b6-4acb-ac3a-4782cff6076a.png',
-      alt: 'Foundation Day Cultural Program',
+      src: 'https://source.unsplash.com/1200x800/?school,event&sig=103',
+      alt: 'Annual Cultural Program',
       category: 'events',
-      description: 'Students performing in traditional attire during the school foundation day celebrations.'
+      description: 'Students performing on stage during a school cultural event.'
     },
     {
       id: '4',
-      src: '/lovable-uploads/d0665058-ed0f-4ffe-b8a0-3aa06fb48e3a.png',
-      alt: '47th Foundation Day Celebration',
+      src: 'https://source.unsplash.com/1200x800/?school,celebration&sig=104',
+      alt: 'Celebration Highlights',
       category: 'events',
-      description: 'Students in colorful traditional attire performing during the 47th Foundation Day celebrations.'
+      description: 'Special moments from school celebrations and group activities.'
     },
     {
       id: '5',
-      src: '/lovable-uploads/IMG_4943.jpeg',
+      src: 'https://source.unsplash.com/1200x800/?school,assembly&sig=105',
       alt: 'School Assembly Session',
       category: 'school',
       description: 'Students gathered for the morning assembly session on the school grounds.'
     },
     {
       id: '6',
-      src: '/lovable-uploads/8d6715e0-c260-4542-8ab6-4d9eac1a4045.png',
-      alt: 'Quiz Competition Participation',
+      src: 'https://source.unsplash.com/1200x800/?school,lab&sig=106',
+      alt: 'Science Lab Activity',
       category: 'school',
-      description: 'Students in uniforms sitting together before or after participating in a quiz or similar school competition.'
+      description: 'Students taking part in practical activities in a modern learning environment.'
     },
     {
       id: '7',
-      src: '/lovable-uploads/4d92c171-40e3-4364-b172-f16ddc40fb65.png',
-      alt: 'School Error Image',
+      src: 'https://source.unsplash.com/1200x800/?school,bus&sig=107',
+      alt: 'School Transport Facility',
       category: 'school',
-      description: 'Screenshot showing 404 error page from the school website.'
+      description: 'Safe and reliable school transport for students.'
     }
   ];
 
@@ -101,16 +100,17 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <div className="container max-w-7xl mx-auto px-4 py-10">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="text-center mb-10 rounded-[2rem] border border-red-200 bg-gradient-to-br from-white via-yellow-50/80 to-red-50/70 p-8 shadow-md"
         >
-          <h1 className="text-4xl font-bold text-school-blue mb-4">School Gallery</h1>
+          <span className="scene-label mb-4">Campus Gallery</span>
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-3">Campus Stories</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore our vibrant school life through images showcasing our campus, events, classroom activities, and more.
+            A snapshot collection of school life, events, classes, and student moments.
           </p>
         </motion.div>
 
@@ -122,12 +122,12 @@ const Gallery = () => {
           <>
             <Tabs defaultValue="all" onValueChange={setSelectedCategory} className="mb-8">
               <div className="flex justify-center">
-                <TabsList className="bg-blue-50/50 p-1 mb-6">
+                <TabsList className="bg-white border border-red-200 p-1 mb-6 rounded-xl shadow-sm">
                   {categories.map(category => (
                     <TabsTrigger 
                       key={category} 
                       value={category}
-                      className="capitalize data-[state=active]:bg-school-blue data-[state=active]:text-white"
+                      className="capitalize data-[state=active]:bg-school-blue data-[state=active]:text-white rounded-lg"
                     >
                       {category}
                     </TabsTrigger>

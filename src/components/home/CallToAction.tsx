@@ -1,105 +1,57 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Star } from 'lucide-react';
+import { CalendarDays, MapPin, ArrowRight } from 'lucide-react';
 
 const CallToAction = () => {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-school-blue/20 via-blue-50/50 to-white"></div>
-      
-      {/* Decorative elements */}
-      <motion.div 
-        className="absolute top-20 left-10 text-school-blue-light/30"
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 10, 0],
-        }}
-        transition={{ 
-          duration: 6,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      >
-        <Sparkles size={40} />
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-20 right-10 text-school-blue/30"
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [0, -10, 0],
-        }}
-        transition={{ 
-          duration: 7,
-          repeat: Infinity,
-          repeatType: "reverse",
-          delay: 1,
-        }}
-      >
-        <Star size={50} />
-      </motion.div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(245,158,11,0.24),transparent_30%),radial-gradient(circle_at_12%_75%,rgba(185,28,28,0.18),transparent_34%),linear-gradient(180deg,#ffffff_0%,#fff7ed_100%)]" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="rounded-[2rem] border border-red-200/70 bg-white/90 backdrop-blur-sm p-8 md:p-12 shadow-xl interactive-card"
+        >
+          <span className="scene-label mb-4">Visit Campus</span>
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+            Ready To Start Your Child's Next Chapter?
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-2xl text-lg font-medium">
+            Meet our team, explore classrooms, and understand the admission process in one guided campus tour.
+          </p>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl shadow-xl p-10 border border-blue-100">
-          <div className="text-center">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              Ready to Join Our <span className="bg-gradient-to-r from-school-blue to-school-blue-dark bg-clip-text text-transparent">School Community</span>?
-            </motion.h2>
-            <motion.p 
-              className="text-gray-600 text-lg mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Take the first step towards providing your child with an <strong>exceptional educational experience</strong>. Contact us today to learn more or schedule a visit to our campus.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-school-blue to-school-blue-dark hover:from-school-blue-dark hover:to-school-blue text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6"
-              >
-                <Link to="/enquire" className="flex items-center space-x-2">
-                  <span className="text-base">Enquire Now</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ 
-                      duration: 1.5, 
-                      repeat: Infinity, 
-                      repeatType: "reverse",
-                      ease: "easeInOut" 
-                    }}
-                  >
-                    <ArrowRight size={18} />
-                  </motion.div>
-                </Link>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-school-blue text-school-blue hover:bg-school-blue/10 rounded-full transition-all duration-300 px-8 py-6"
-              >
-                <Link to="/about" className="flex items-center space-x-2">
-                  <span className="text-base">Learn More</span>
-                </Link>
-              </Button>
-            </motion.div>
+          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 interactive-card">
+              <p className="text-base font-bold text-gray-800 inline-flex items-center gap-2">
+                <CalendarDays size={16} className="text-school-blue" />
+                School Hours
+              </p>
+              <p className="text-base text-gray-600 mt-2">Mon-Fri: 8:00 AM - 3:00 PM | Sat: 8:00 AM - 12:00 PM</p>
+            </div>
+            <div className="rounded-2xl border border-red-200 bg-red-50/60 p-4 interactive-card">
+              <p className="text-base font-bold text-gray-800 inline-flex items-center gap-2">
+                <MapPin size={16} className="text-school-blue" />
+                Campus Address
+              </p>
+              <p className="text-base text-gray-600 mt-2">Shivaji Colony, Under the Flyover, Rohtak</p>
+            </div>
           </div>
-        </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild className="interactive-cta rounded-2xl bg-gradient-to-r from-school-blue to-school-blue-dark text-white px-7 h-12 text-base font-bold">
+              <Link to="/enquire">Enquire Now</Link>
+            </Button>
+            <Button asChild variant="outline" className="interactive-cta rounded-2xl border-2 border-school-blue text-school-blue px-7 h-12 text-base font-bold">
+              <Link to="/about" className="inline-flex items-center gap-2">
+                Learn More
+                <ArrowRight size={16} />
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

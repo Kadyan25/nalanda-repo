@@ -20,22 +20,22 @@ const NotFound = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Page Not Found | Indo Foundation School</title>
-        <meta name="description" content="The page you are looking for does not exist. Please navigate back to the Indo Foundation School homepage to find what you're looking for." />
+        <title>Page Not Found | Nalanda Public School</title>
+        <meta name="description" content="The page you are looking for does not exist. Please navigate back to the Nalanda Public School homepage to find what you're looking for." />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://www.indofoundationschool.com" />
+        <link rel="canonical" href="https://www.nalandapublicschool.in" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://www.indofoundationschool.com${location.pathname}`} />
-        <meta property="og:title" content="Page Not Found | Indo Foundation School" />
-        <meta property="og:description" content="The page you are looking for does not exist. Please navigate back to the Indo Foundation School homepage." />
+        <meta property="og:url" content={`https://www.nalandapublicschool.in${location.pathname}`} />
+        <meta property="og:title" content="Page Not Found | Nalanda Public School" />
+        <meta property="og:description" content="The page you are looking for does not exist. Please navigate back to the Nalanda Public School homepage." />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content={`https://www.indofoundationschool.com${location.pathname}`} />
-        <meta name="twitter:title" content="Page Not Found | Indo Foundation School" />
-        <meta name="twitter:description" content="The page you are looking for does not exist. Please navigate back to the Indo Foundation School homepage." />
+        <meta name="twitter:url" content={`https://www.nalandapublicschool.in${location.pathname}`} />
+        <meta name="twitter:title" content="Page Not Found | Nalanda Public School" />
+        <meta name="twitter:description" content="The page you are looking for does not exist. Please navigate back to the Nalanda Public School homepage." />
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-school-blue/5 to-white px-6">
         <div className="text-center max-w-xl">

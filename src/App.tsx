@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-
+import Gallery from "./pages/Gallery"; 
 // Pages
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -34,18 +34,18 @@ const App = () => (
         {/* Global base meta tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1e3a8a" />
-        <meta name="author" content="Indo Foundation School" />
+        <meta name="theme-color" content="#b91c1c" />
+        <meta name="author" content="Nalanda Public School" />
         <meta name="generator" content="React" />
-        <meta name="application-name" content="Indo Foundation School Website" />
+        <meta name="application-name" content="Nalanda Public School Website" />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Indo Foundation School" />
+        <meta name="apple-mobile-web-app-title" content="Nalanda Public School" />
         
         {/* Favicon links */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/lovable-uploads/1.jpeg" />
+        <link rel="apple-touch-icon" href="/lovable-uploads/1.jpeg" />
       </Helmet>
       <TooltipProvider>
         <Toaster />
@@ -59,6 +59,7 @@ const App = () => (
             <Route path="/admin/*" element={<Navigate to="/" replace />} />
             <Route path="/wp-admin/*" element={<Navigate to="/" replace />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

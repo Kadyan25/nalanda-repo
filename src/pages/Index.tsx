@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/home/HeroSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import StatsSection from '@/components/home/StatsSection';
 import CallToAction from '@/components/home/CallToAction';
 
 const Index = () => {
@@ -11,42 +10,42 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "School",
-    "name": "Indo Foundation School",
-    "description": "Indo Foundation School provides quality education with a focus on academic excellence, personal growth, and holistic development in a nurturing environment.",
-    "url": "https://www.indofoundationschool.com",
+    "name": "Nalanda Public School",
+    "description": "Nalanda Public School provides quality English medium education from Nursery to 12th with a focus on academic excellence and holistic development.",
+    "url": "https://www.nalandapublicschool.in",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Plot No 42/8, Shivaji Colony",
+      "streetAddress": "Shivaji Colony, Under the Flyover",
       "addressLocality": "Rohtak",
       "addressRegion": "Haryana",
       "postalCode": "124001",
       "addressCountry": "IN"
     },
-    "telephone": "+919896110054",
-    "email": "indofoundationschool@gmail.com"
+    "telephone": "+918950899495",
+    "email": "info@nalandapublicschool.in"
   };
 
   return (
     <Layout>
       <Helmet>
-        <title>Indo Foundation School Rohtak | Excellence in Education Since 1995</title>
-        <meta name="description" content="Indo Foundation School in Rohtak provides exceptional education with a focus on academic excellence, personal growth, and holistic development in a nurturing environment." />
-        <meta name="keywords" content="Indo Foundation School, best school in Rohtak, education in Haryana, CBSE schools, academic excellence, holistic education, school admission, Shivaji Colony Rohtak" />
-        <link rel="canonical" href="https://www.indofoundationschool.com" />
+        <title>Nalanda Public School Rohtak | Admission Open</title>
+        <meta name="description" content="Nalanda Public School in Rohtak offers English medium education from Nursery to 12th (all streams) with smart classes and qualified faculty." />
+        <meta name="keywords" content="Nalanda Public School, Rohtak school, admission open, English medium school, Nursery to 12th, Shivaji Colony" />
+        <link rel="canonical" href="https://www.nalandapublicschool.in" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.indofoundationschool.com" />
-        <meta property="og:title" content="Indo Foundation School - Excellence in Education Since 1995" />
-        <meta property="og:description" content="Excellence in Education - Nurturing minds, building futures through quality education and holistic development at Indo Foundation School, Rohtak." />
-        <meta property="og:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta property="og:url" content="https://www.nalandapublicschool.in" />
+        <meta property="og:title" content="Nalanda Public School - Admission Open" />
+        <meta property="og:description" content="An English Medium School, Nursery to 12th (All Stream), focused on quality education and strong values." />
+        <meta property="og:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.indofoundationschool.com" />
-        <meta name="twitter:title" content="Indo Foundation School - Excellence in Education" />
-        <meta name="twitter:description" content="Excellence in Education - Nurturing minds, building futures through quality education and holistic development at Indo Foundation School, Rohtak." />
-        <meta name="twitter:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta name="twitter:url" content="https://www.nalandapublicschool.in" />
+        <meta name="twitter:title" content="Nalanda Public School - Admission Open" />
+        <meta name="twitter:description" content="English medium school in Rohtak with admission open from Nursery to 12th (All Stream)." />
+        <meta name="twitter:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Structured data */}
         <script type="application/ld+json">
@@ -55,7 +54,6 @@ const Index = () => {
       </Helmet>
       <HeroSection />
       <FeaturesSection />
-      <StatsSection />
       <CallToAction />
     </Layout>
   );

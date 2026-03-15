@@ -1,92 +1,53 @@
-
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const faqs = [
   {
-    question: "What curriculum do you follow?",
-    answer: "We follow the CBSE curriculum, enhanced with additional resources and teaching methodologies to ensure comprehensive learning and skill development."
+    q: 'What curriculum do you follow?',
+    a: 'We follow a structured school curriculum with concept clarity, practical exposure, and regular assessment support.',
   },
   {
-    question: "How do you assess student performance?",
-    answer: "We employ a holistic assessment system that includes formative and summative evaluations, projects, class participation, and standardized tests to measure academic progress and skill development."
+    q: 'How is student progress monitored?',
+    a: 'Through routine class assessments, exams, PTM interaction, and continuous teacher feedback.',
   },
   {
-    question: "What support services do you offer for students?",
-    answer: "We provide academic counseling, remedial classes, advanced learning opportunities, and access to educational resources to support every student's learning journey."
+    q: 'Do you support board exam preparation?',
+    a: 'Yes. We provide focused preparation, revision routines, and mentoring for board classes.',
   },
-  {
-    question: "How do you prepare students for competitive exams?",
-    answer: "Our specialized coaching programs, practice tests, and targeted study materials help students prepare effectively for various competitive examinations and board exams."
-  }
 ];
 
 const Faq = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <motion.div 
-          className="max-w-3xl mx-auto text-center mb-16"
+    <section className="py-20 bg-gradient-to-b from-white to-red-50/35">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
-          <div className="inline-block p-2 px-4 bg-school-blue/10 rounded-full text-school-blue font-medium mb-4">
-            Common Questions
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600">Get answers to commonly asked questions about our academic programs</p>
+          <span className="scene-label mb-4">FAQs</span>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900">Common Academic Questions</h2>
         </motion.div>
-        
-        <motion.div 
-          className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Card className="border-0 shadow-lg">
-            <CardContent className="p-6">
-              <Accordion type="single" collapsible className="w-full">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 last:border-0">
-                    <AccordionTrigger className="text-lg font-medium text-gray-900 hover:text-school-blue py-5">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 pb-5">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
-        </motion.div>
-        
-        <motion.div 
-          className="max-w-2xl mx-auto mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <p className="text-lg text-gray-700 mb-6">
-            Still have questions about our academic programs or approach?
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-school-blue hover:bg-school-blue-dark transition-all duration-300 gap-2 shadow-lg hover:shadow-xl"
-            asChild
-          >
-            <Link to="/enquire">
-              Contact Academic Office
-            </Link>
+
+        <div className="interactive-card rounded-3xl border border-red-200 bg-white shadow-md p-4 md:p-6">
+          <Accordion type="single" collapsible>
+            {faqs.map((item, idx) => (
+              <AccordionItem key={idx} value={`faq-${idx}`} className="border-red-100">
+                <AccordionTrigger className="text-left text-lg font-bold text-gray-900">{item.q}</AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-base font-medium">{item.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <div className="text-center mt-8">
+          <Button asChild className="interactive-cta rounded-2xl bg-gradient-to-r from-school-blue to-school-blue-dark text-white h-12 px-7 text-base font-bold">
+            <Link to="/enquire">Talk To Academic Office</Link>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Map, Navigation } from 'lucide-react';
+import { Map, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type MapSectionProps = {
@@ -11,11 +11,9 @@ type MapSectionProps = {
 };
 
 const MapSection: React.FC<MapSectionProps> = ({ coordinates, schoolName, mapUrl }) => {
-  // Updated precise coordinates: 28.883885709030803, 76.59034881178829
-  const decimalCoordinates = "28.883885709030803,76.59034881178829";
+  const decimalCoordinates = coordinates;
   
-  // Direct Google Maps URL with the exact coordinates
-  const exactMapUrl = `https://www.google.com/maps?q=${decimalCoordinates}&z=18`;
+  const exactMapUrl = mapUrl;
   
   return (
     <section className="py-16 bg-gradient-to-b from-white to-school-blue/10">
@@ -53,34 +51,34 @@ const MapSection: React.FC<MapSectionProps> = ({ coordinates, schoolName, mapUrl
             
             <div className="max-w-md mx-auto border border-school-blue/20 rounded-lg p-3 mb-6 bg-school-blue/5">
               <p className="font-medium text-gray-800">
-                Indo Foundation School
+                {schoolName}
               </p>
               <p className="text-gray-600 mb-2">
-                Plot No 42/8, Shivaji Colony Rohtak-124001 Haryana
+                Shivaji Colony, Under the Flyover, Rohtak, Haryana
               </p>
               <p className="text-sm text-school-blue font-medium">
-                Coordinates: 28.883885709030803, 76.59034881178829
+                Coordinates: {decimalCoordinates}
               </p>
             </div>
           </div>
           
           <div className="aspect-video rounded-xl overflow-hidden shadow-lg relative">
             <iframe 
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d76.59034881178829!3d28.883885709030803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDUzJzAyLjAiTiA3NsKwMzUnMjUuMyJF!5e0!3m2!1sen!2sin!4v1698500645781!5m2!1sen!2sin`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(decimalCoordinates)}&z=18&output=embed`}
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Indo Foundation School Location"
+              title={`${schoolName} Location`}
               className="absolute inset-0"
             ></iframe>
           </div>
           
           <div className="mt-6 text-center text-gray-600">
-            <p className="font-medium">Indo Foundation School</p>
-            <p>Plot No 42/8, Shivaji Colony Rohtak, Haryana 124001</p>
+            <p className="font-medium">{schoolName}</p>
+            <p>Shivaji Colony, Under the Flyover, Rohtak, Haryana</p>
           </div>
         </motion.div>
       </div>

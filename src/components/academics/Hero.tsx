@@ -1,78 +1,37 @@
-
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
+import { BookMarked, Lightbulb, BrainCircuit } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative py-20 overflow-hidden w-full">
-      <div className="absolute inset-0 bg-gradient-to-b from-school-blue/40 to-white/90 overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-20 bg-[url('/lovable-uploads/db8487fa-d890-4244-9872-a9bbabd534d8.png')] bg-cover bg-center"></div>
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-school-blue/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 -left-40 w-96 h-96 bg-school-blue/5 rounded-full blur-3xl"></div>
-        
-        <motion.div 
-          className="absolute top-1/4 left-1/3 w-8 h-8 rounded-full bg-amber-400/30 backdrop-blur-sm"
-          animate={{ 
-            y: [0, -15, 0], 
-            x: [0, 10, 0],
-            rotate: [0, 10, 0]
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            repeatType: "reverse" 
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-12 h-12 rounded-full bg-purple-400/30 backdrop-blur-sm"
-          animate={{ 
-            y: [0, 20, 0], 
-            x: [0, -15, 0],
-            rotate: [0, -15, 0]
-          }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            repeatType: "reverse" 
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/3 left-1/4 w-10 h-10 rounded-full bg-emerald-400/30 backdrop-blur-sm"
-          animate={{ 
-            y: [0, -25, 0], 
-            x: [0, -10, 0],
-            rotate: [0, 20, 0]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            repeatType: "reverse" 
-          }}
-        />
-      </div>
-      
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <motion.div 
-          className="max-w-3xl mx-auto text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(185,28,28,0.2),transparent_34%),radial-gradient(circle_at_82%_24%,rgba(245,158,11,0.24),transparent_32%),linear-gradient(180deg,#fff7ed_0%,#ffffff_90%)]" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.55 }}
+          className="rounded-[2rem] border border-red-200 bg-white/85 backdrop-blur-sm p-8 md:p-10 shadow-lg interactive-card"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-school-blue-dark via-school-blue to-school-blue-light">
-            Academic Excellence
+          <p className="scene-label mb-4">Academic Overview</p>
+          <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-[1.04]">
+            Designed For Curiosity, Built For Results
           </h1>
-          <p className="text-xl text-gray-700 leading-relaxed mb-8">
-            Discover our comprehensive approach to education that nurtures intellectual curiosity, 
-            critical thinking, and a lifelong passion for learning.
+          <p className="text-gray-600 mt-5 max-w-3xl text-xl font-medium">
+            Our academic model combines conceptual clarity, modern teaching tools, and disciplined mentorship from foundational years to senior secondary.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="bg-school-blue hover:bg-school-blue-dark transition-all duration-300 gap-2 shadow-lg hover:shadow-xl"
-            >
-              Explore Programs <ChevronRight className="w-4 h-4" />
-            </Button>
+          <div className="mt-8 grid sm:grid-cols-3 gap-4">
+            <div className="rounded-2xl border border-red-200 bg-red-50/70 p-5 interactive-card">
+              <BookMarked className="text-school-blue mb-3" size={24} />
+              <p className="font-bold text-lg text-gray-800">Structured Curriculum</p>
+            </div>
+            <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-5 interactive-card">
+              <Lightbulb className="text-school-blue mb-3" size={24} />
+              <p className="font-bold text-lg text-gray-800">Interactive Learning</p>
+            </div>
+            <div className="rounded-2xl border border-orange-200 bg-orange-50/70 p-5 interactive-card">
+              <BrainCircuit className="text-school-blue mb-3" size={24} />
+              <p className="font-bold text-lg text-gray-800">Exam Readiness</p>
+            </div>
           </div>
         </motion.div>
       </div>

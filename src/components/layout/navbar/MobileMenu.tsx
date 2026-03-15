@@ -4,7 +4,6 @@ import { ChevronRight, BookOpen, Menu, X, Home, Users, Image, MessageSquare } fr
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { navLinks } from './navData';
-import SocialLinks from './SocialLinks';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -32,17 +31,16 @@ const getIconForPath = (path: string) => {
 const MobileMenu = ({ isOpen, toggleMenu, closeMenu }: MobileMenuProps) => {
   return (
     <>
-      {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center">
         <motion.button
           onClick={toggleMenu}
-          className="text-gray-600 hover:text-school-blue focus-ring rounded-full p-2.5 hover:bg-blue-50 transition-all duration-300 relative overflow-hidden group"
+          className="text-gray-700 hover:text-school-blue focus-ring rounded-xl p-2.5 hover:bg-red-50 transition-all duration-300 relative overflow-hidden group border border-red-200/80 bg-white/85"
           aria-expanded={isOpen}
           aria-label="Toggle menu"
           whileTap={{ scale: 0.9 }}
         >
           <motion.span
-            className="absolute inset-0 bg-blue-100 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+            className="absolute inset-0 bg-yellow-200 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"
             initial={false}
             animate={isOpen ? { scale: 100 } : { scale: 0 }}
             transition={{ duration: 0.5 }}
@@ -55,37 +53,36 @@ const MobileMenu = ({ isOpen, toggleMenu, closeMenu }: MobileMenuProps) => {
         </motion.button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-[68px] left-0 right-0 bg-gradient-to-b from-white/95 via-blue-50/95 to-white/95 backdrop-blur-lg shadow-lg border-t border-blue-100"
+            transition={{ duration: 0.28 }}
+            className="md:hidden absolute top-[88px] left-0 right-0 bg-gradient-to-b from-white/95 via-red-50/90 to-yellow-50/95 backdrop-blur-xl shadow-xl border-t border-red-200/60"
           >
             <div className="flex flex-col p-5 space-y-3">
               {navLinks.map((link, index) => {
                 const IconComponent = getIconForPath(link.path);
-                
+
                 return (
                   <motion.div
                     key={link.path}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * index, duration: 0.3 }}
+                    transition={{ delay: 0.08 * index, duration: 0.25 }}
                   >
-                    <NavLink 
+                    <NavLink
                       to={link.path}
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         cn(
-                          "p-3 rounded-lg flex items-center justify-between", 
-                          isActive 
-                            ? "bg-blue-50 text-school-blue font-medium border-l-4 border-school-blue" 
+                          "p-3 rounded-xl flex items-center justify-between border",
+                          isActive
+                            ? "bg-gradient-to-r from-yellow-100 to-red-100 text-school-blue-dark font-medium border-red-200"
                             : link.highlight
-                              ? "bg-gradient-to-r from-school-blue to-school-blue-dark text-white"
-                              : "text-gray-700 hover:bg-blue-50/50 hover:text-school-blue",
+                              ? "bg-gradient-to-r from-school-blue to-school-blue-dark text-white border-transparent"
+                              : "text-gray-700 bg-white/70 border-red-100 hover:bg-yellow-50/70 hover:text-school-blue",
                           link.isBold && "font-bold",
                           link.className,
                           "transition-all duration-300 hover:shadow-sm"
@@ -97,7 +94,7 @@ const MobileMenu = ({ isOpen, toggleMenu, closeMenu }: MobileMenuProps) => {
                         {IconComponent && (
                           <span className={cn(
                             "p-2 rounded-full flex items-center justify-center",
-                            link.highlight ? "bg-white/20" : "bg-blue-100/50"
+                            link.highlight ? "bg-white/20" : "bg-red-100/60"
                           )}>
                             <IconComponent size={18} className={link.highlight ? "text-white" : ""} />
                           </span>
@@ -109,8 +106,6 @@ const MobileMenu = ({ isOpen, toggleMenu, closeMenu }: MobileMenuProps) => {
                   </motion.div>
                 );
               })}
-              
-              <SocialLinks isMobile={true} />
             </div>
           </motion.div>
         )}
@@ -120,3 +115,4 @@ const MobileMenu = ({ isOpen, toggleMenu, closeMenu }: MobileMenuProps) => {
 };
 
 export default MobileMenu;
+

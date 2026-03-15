@@ -13,12 +13,12 @@ const Academics = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Indo Foundation School Academic Programs",
-    "description": "Comprehensive academic programs and curriculum at Indo Foundation School focusing on holistic development and excellence in education.",
+    "name": "Nalanda Public School Academic Programs",
+    "description": "Comprehensive academic programs and curriculum at Nalanda Public School focusing on holistic development and excellence in education.",
     "provider": {
       "@type": "Organization",
-      "name": "Indo Foundation School",
-      "sameAs": "https://www.indofoundationschool.com"
+      "name": "Nalanda Public School",
+      "sameAs": "https://www.nalandapublicschool.in"
     },
     "hasCourseInstance": [
       {
@@ -42,24 +42,24 @@ const Academics = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Academic Programs & Curriculum | Indo Foundation School Rohtak</title>
-        <meta name="description" content="Explore Indo Foundation School's comprehensive academic programs, CBSE-aligned curriculum, extracurricular activities, and teaching methodology designed for all-round student development." />
-        <meta name="keywords" content="Indo Foundation School academics, CBSE curriculum Rohtak, school programs, extracurricular activities, primary education, secondary education, senior secondary education, holistic learning, Rohtak education" />
-        <link rel="canonical" href="https://www.indofoundationschool.com/academics" />
+        <title>Academic Programs & Curriculum | Nalanda Public School Rohtak</title>
+        <meta name="description" content="Explore Nalanda Public School's comprehensive academic programs, English medium curriculum, extracurricular activities, and teaching methodology designed for all-round student development." />
+        <meta name="keywords" content="Nalanda Public School academics, school curriculum Rohtak, school programs, extracurricular activities, primary education, secondary education, senior secondary education" />
+        <link rel="canonical" href="https://www.nalandapublicschool.in/academics" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.indofoundationschool.com/academics" />
-        <meta property="og:title" content="Academic Programs & Curriculum | Indo Foundation School Rohtak" />
+        <meta property="og:url" content="https://www.nalandapublicschool.in/academics" />
+        <meta property="og:title" content="Academic Programs & Curriculum | Nalanda Public School Rohtak" />
         <meta property="og:description" content="Explore our comprehensive academic programs, CBSE-aligned curriculum, and extracurricular activities designed for holistic student development." />
-        <meta property="og:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta property="og:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.indofoundationschool.com/academics" />
-        <meta name="twitter:title" content="Academic Programs & Curriculum | Indo Foundation School" />
+        <meta name="twitter:url" content="https://www.nalandapublicschool.in/academics" />
+        <meta name="twitter:title" content="Academic Programs & Curriculum | Nalanda Public School" />
         <meta name="twitter:description" content="Explore our comprehensive academic programs, curriculum, and extracurricular activities designed for holistic student development." />
-        <meta name="twitter:image" content="https://www.indofoundationschool.com/lovable-uploads/d80d2fa3-0494-48a8-865e-5f224454dd59.png" />
+        <meta name="twitter:image" content="https://www.nalandapublicschool.in/lovable-uploads/1.jpeg" />
         
         {/* Structured data */}
         <script type="application/ld+json">

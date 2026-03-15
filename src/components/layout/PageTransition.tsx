@@ -35,7 +35,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      className="min-h-screen pt-20"
+      className="min-h-screen pt-24"
     >
       {children}
     </motion.div>
